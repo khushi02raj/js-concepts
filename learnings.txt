@@ -1,0 +1,25 @@
+When using map in React, you must explicitly return the JSX for each item. There are two ways to do this:
+
+1. Explicit Return (Using {} and return)
+If you use curly braces {} in the map callback, you must explicitly use the return keyword:
+
+Hotels.map((hotel) => {
+  return (
+    <div key={hotel.id}>
+      <h3>Name: {hotel.hotelName}</h3>
+      <p>Review: {hotel.reviews}</p>
+    </div>
+  );
+});
+
+2. Implicit Return (Using ())
+If you use parentheses () instead of curly braces {}, the return is implicit:
+
+Hotels.map((hotel) => (
+  <div key={hotel.id}>
+    <h3>Name: {hotel.hotelName}</h3>
+    <p>Review: {hotel.reviews}</p>
+  </div>
+));
+
+3.Always provide a unique key prop for each element in the list.
