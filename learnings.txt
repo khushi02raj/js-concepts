@@ -23,3 +23,16 @@ Hotels.map((hotel) => (
 ));
 
 3.Always provide a unique key prop for each element in the list.
+
+4.The rest operator allows you to represent an indefinite number of arguments as an array. 
+ It is used in function parameters to collect all remaining arguments into an array.
+
+
+5.To overcome limitations of JSON.stringify and JSON.parse
+,use libraries like Lodash which provide more robust deep copy functions:
+
+Lodash's _.cloneDeep():
+const _ = require('lodash');
+const original = { a: 1, b: { c: 2 } };
+const copy = _.cloneDeep(original);
+console.log(copy); // Output: { a: 1, b: { c: 2 } }
