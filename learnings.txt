@@ -36,3 +36,17 @@ const _ = require('lodash');
 const original = { a: 1, b: { c: 2 } };
 const copy = _.cloneDeep(original);
 console.log(copy); // Output: { a: 1, b: { c: 2 } }
+
+6. background: linear-gradient(to right, #217bfe, #9333ea);
+
+7.Using setSeconds(prevSeconds => prevSeconds + 1) instead of setSeconds(seconds + 1) is important for 
+  ensuring the state update is based on the most recent state value.
+  React may batch multiple state updates for performance reasons. 
+  This means that seconds might not be updated immediately when you call setSeconds(seconds + 1).
+
+  Imagine you have two state updates happening almost simultaneously:
+  setSeconds(seconds + 1);
+  setSeconds(seconds + 1);
+
+If seconds was initially 0, you might expect it to become 2. However, due to the asynchronous nature of state updates, 
+both updates might read the initial value (0) and set the state to 1, resulting in an incorrect final state.
